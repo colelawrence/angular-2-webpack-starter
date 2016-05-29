@@ -32,6 +32,15 @@
   position: relative;
   top: -3px;
 }
+.heroes .delete-button {
+  float: right;
+  position: relative;
+  transition: background-color .4s;
+  margin-right: .3em;
+}
+.heroes .delete-button:hover {
+  background-color: #fbb;
+}
 .heroes .badge {
   display: inline-block;
   font-size: small;

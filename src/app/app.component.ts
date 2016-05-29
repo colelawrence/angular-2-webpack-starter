@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard.component'
 import { HeroesComponent } from './heroes.component'
 import { HeroDetailComponent } from './hero-detail.component'
 
+import '../../public/css/styles.css'
+
 @Component({
   selector: 'my-app',
   styles: [require('./app.component.css')],
