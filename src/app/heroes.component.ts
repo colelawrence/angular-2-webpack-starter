@@ -26,19 +26,19 @@ export class HeroesComponent implements OnInit {
   getHeroes() {
     this.heroService.getHeros().then(heroes => this.heroes = heroes)
   }
-  
+
   addHero() {
     this.addingHero = true
     this.selectedHero = null
   }
-  
+
   close(savedHero: Hero) {
     this.addingHero = false
     if (savedHero) {
       this.getHeroes()
     }
   }
-  
+
   delete(hero: Hero, event: any) {
     event.stopPropagation()
     this.heroService
@@ -57,9 +57,9 @@ export class HeroesComponent implements OnInit {
   }
 
   onSelect(hero: Hero) { this.selectedHero = hero }
-  
+
   gotoSelectedDetail() {
     this.router.navigate(['HeroDetail', { id: this.selectedHero.id }])
   }
-  
+
 }
