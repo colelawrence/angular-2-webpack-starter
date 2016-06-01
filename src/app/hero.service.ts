@@ -36,9 +36,9 @@ export class HeroService {
   delete(hero: Hero): Promise<Hero> {
     let headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    
+
     let url = `${this.heroesUrl}/${hero.id}`
-    
+
     return this.http
       .delete(url, { headers: headers })
       .toPromise()
@@ -52,7 +52,7 @@ export class HeroService {
     let headers = new Headers({
       'Content-Type': 'application/json'
     })
-    
+
     return this.http
       .post(this.heroesUrl, JSON.stringify(hero), { headers: headers })
       .toPromise()
@@ -64,9 +64,9 @@ export class HeroService {
   private put(hero: Hero): Promise<Hero> {
     let headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    
+
     let url = `${this.heroesUrl}/${hero.id}`
-    
+
     return this.http
       .put(url, JSON.stringify(hero), { headers: headers })
       .toPromise()
@@ -77,6 +77,6 @@ export class HeroService {
   handleError(error: any) {
     // here, we only log the error to the console, we can handle this better for the User
     console.error('An error occurred with the Hero Service', error)
-    return Promise.reject(error.message || error)    
+    return Promise.reject(error.message || error)
   }
 }
