@@ -5,6 +5,9 @@
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
     "test": "karma start",
+    "lint-typescript": "tslint --config ./tslint.json --exclude node_modules ./src/main.ts",
+    "lint-sass": "sass-lint 'src/**/*.@(sa|sc|c)ss' --config ./.sass-lint.yml --ignore 'node_modules/**/*.*' --verbose --no-exit",
+    "lint-all": "npm run lint-typescript && npm run lint-sass",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "postinstall": "typings install"
   },
@@ -39,6 +42,7 @@
     "phantomjs-prebuilt": "^2.1.7",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
+    "sass-lint": "^1.7.0",
     "style-loader": "^0.13.1",
     "ts-loader": "^0.8.1",
     "tslint": "^3.10.2",
