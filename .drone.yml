@@ -2,6 +2,6 @@ pipeline:
   test:
     image: node:6
     commands:
-      - npm install > npm-install.log
+      - npm install 2&1 > npm-install.log
       - npm test
 
