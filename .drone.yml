@@ -1,8 +1,8 @@
 pipeline:
   test:
-    image: node:6
+    image: node:5
     commands:
-      - npm install --color > npm-install.log
+      - npm install --quiet --color > npm-install.log
       - npm version
   debug:
     image: dryclean/drone-debug
