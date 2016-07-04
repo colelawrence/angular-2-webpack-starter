@@ -2,6 +2,15 @@ pipeline:
   test:
     image: node:6
     commands:
-      - npm install 2&1 > npm-install.log
-      - npm test
+      - npm install --color > npm-install.log
+      - npm version
+  debug:
+    image: dryclean/drone-debug
+    commands:
+      - echo -e $PLUGIN_GIT_ID
+      - echo -e $PLUGIN_GIT_PRIVATE
+  install-cat:
+    image: busybox
+    commands:
+      - cat npm-install.log
 
