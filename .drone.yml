@@ -1,8 +1,13 @@
 pipeline:
+  install:
+    image: colelawr/node-ssh:5
+    id_rsa: $$SSH_ID_RSA
+    known_hosts: $$SSH_KNOWN_HOSTS
+    commands:
+     - npm install > npm-install.log
   test:
     image: node:5
     commands:
-      - npm install --quiet --color > npm-install.log
       - npm version
   debug:
     image: dryclean/drone-debug
